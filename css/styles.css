@@ -1,9 +1,12 @@
+/* ----- Key Frames ----- */
+/* Keyframe for the Masthead Arrow, That Simply Moves the Arrow up & Down */
 @keyframes arrowAnimation {
     0% { transform: translateY(0px); }
     50% { transform: translateY(50px); }
     100% { transform: translateY(0px); }
 }
-
+/* Keyframe for the Hover Effect for the 2nd Button 
+    The Keyframe Simple Changes the Colour and Rotates the Button Back & Forth*/
 @keyframes tiltBackAndForth {
     0% { transform: rotate(0deg); background-color: #072d67; }
     25% { transform: rotate(30deg); background-color: #5e35b1; }
@@ -11,105 +14,49 @@
     75% { transform: rotate(-30deg); background-color: #5e35b1; }
     100% { transform: rotate(0deg); background-color: #072d67; } 
 }
-
+/* ----- Main HMTL Elements ----- */
+/* HTML */
 html {
     scroll-behavior: smooth;
     background-color: #072d67;
 }
-
-* {
-    box-sizing: border-box;
-}
+/* Body */
 body {
-    width: 100%;
+    min-width: 100vh;
 }
-
+/* Main */
 main {
     width: 100%;
 }
-
+/* ----- Header Selectors ----- */
+/* Header */
 header {
-    width: 100%;
+    min-width: 100%;
     height: auto;
     position: fixed;
     z-index: 5;
     margin: 0;
 }
-
+/* Header and any div Element Inside a Container With the Id rowThree */
 header, #rowThree div {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
+/* Img Elements Within the Header Element */
 header img {
     width: 250px;
     height: auto;
     margin: 0
 }
-
+/* Menu Elements Inside of a nav Element Inside of a Container With the ID desktopNav Inside of the Header Element */
 header #desktopNav nav menu {
     display: flex;
     flex-direction: row;
+    padding-right: 100px;
 }
-
-li {
-    list-style: none;
-    font-size: 2rem;
-    font-weight: bold;
-    padding: 10px;
-}
-
-li:first-child:after, li:nth-child(2):after {
-    content: " | ";
-}
-
-p, h1, h2, h3, input::placeholder, input[type="submit"], li {
-    font-family: "Roboto Mono";
-}
-
-form {
-    background-color: #5e35b1;
-    width: 100%;
-    height: 750px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-form div {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 80%;
-}
-
-form div input {
-    width: 48.5%;
-}
-
-input {
-    width: 80%;
-    height: 115px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-size: 2rem;
-}
-
-input[type="submit"] {
-    background-color: transparent;
-    color: #fefefe;
-    border: 4px solid #f4f4f4;
-    width: 40%;
-}
-
-input::placeholder {
-    color: #0e0e0e;
-    font-weight: bold;
-    padding-left: 20px
-}
-
+/* ----- Footer Selector ----- */
+/* Footer Elements */
 footer {
     width: 100%;
     height: 500px;
@@ -119,12 +66,61 @@ footer {
     flex-direction: column;
     background-color: #f4f4f4;
 }
-
+/* p Tags Within the Footer Element */
 footer p {
     padding-bottom: 25px;
     font-size: 1.5rem;
 }
-
+/* ----- Form Selectors ----- */
+/* Form Elements */
+form {
+    background-color: #5e35b1;
+    width: 100%;
+    height: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+/* Div Containers Inside of a Form Element */
+form div {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 80%;
+}
+/* Input Elements Inside of a div, Inside of a Form Element */
+form div input {
+    width: 48.5%;
+}
+/* Input Elements */
+input {
+    width: 80%;
+    height: 115px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+/* Input Elements With the Attribute ' type='submit' ' */
+input[type="submit"] {
+    background-color: transparent;
+    color: #fefefe;
+    border: 4px solid #f4f4f4;
+    width: 40%;
+}
+/* Placeholder Attributes Inside of an Input Element */
+input::placeholder {
+    color: #0e0e0e;
+    font-weight: bold;
+    padding-left: 20px;
+}
+/* When an Input Element is Focused on */
+input:focus {
+    border-radius: 10px;
+    box-shadow: 6px 6px 6px #0e0e0e;
+}
+/* ----- Text Selectors ----- */
+/* H1 Tags */
 h1 {
     width: 100%;
     text-align: center;
@@ -134,17 +130,32 @@ h1 {
     position: relative;
     top: -5vh;
 }
-
+/* li Tags */
+li {
+    list-style: none;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 10px;
+}
+/* li Tags That are the First Child of Their Containers AND li Tags That are the 2nd Child of Their Containers. After the Both are Rendered */
+li:first-child:after, li:nth-child(2):after {
+    content: " | ";
+}
+/* p, h1, h2, h3, li, Placeholder Attributes in an Input Tag, Input Elements With the Attribute ' type='submit' '*/
+p, h1, h2, h3, input::placeholder, input[type="submit"], li {
+    font-family: "Roboto Mono";
+}
 /* ---- IDs ---- */
+/* A Container With the ID masthead */
 #masthead {
     width: 100%;
     clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 51% 91%, 100% 100%);  
 }
-
+/* A Container With the ID mastheadBacking */
 #mastheadBacking {
-    background-color: white;
+    background-color: #f4f4f4;
 }
-
+/* Containers With the ID masthead and rowThree */
 #masthead, #rowThree {
     width: 100%;
     min-height: 100vh;
@@ -156,14 +167,14 @@ h1 {
     justify-content: center;
     flex-direction: column;
 }
-
+/* Container With the ID arrowContainer */
 #arrowContainer {
     position: absolute;
     top: 60%;
     animation: arrowAnimation 3s infinite ease-in-out;
     transition: all 0.5s ease-in-out;
 }
-
+/* Span Tags Inside of a Container With the ID arrowContainer */
 #arrowContainer span {
     position: absolute;
     background-color: #f4f4f4;
@@ -171,27 +182,27 @@ h1 {
     height: 7px;
     color: #f4f4f4;
 }
-
+/* the First Span Child of the Container With the ID arrowContainer */
 #arrowContainer span:first-child {
     display: block;
     transform: rotate(-45deg);
 }
-
+/* the Last Span Child of the Container With the ID arrowContainer */
 #arrowContainer span:last-child {
     display: block;
     transform: rotate(45deg);
     left: -38px;
 }
-
+/* The Container With the ID rowOne */
 #rowOne {
     width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: #f4f4f4;
     margin-bottom: 0;
 }
-
+/* The First div Child of the Container With the ID rowOne or rowTwo */
 #rowOne div:first-child, #rowTwo div:first-child {
     display: flex;
     align-items: center;
@@ -199,45 +210,45 @@ h1 {
     flex-direction: column; 
     margin-bottom: 50px; 
 }
-
+/* The First h2 Child of the Container With the ID rowOne or rowTwo and any h2 Elements Within the Container With the ID rowThree */
 #rowOne div:first-child h2, #rowTwo div:first-child h2, #rowThree h2 {
     font-size: 4rem;
     font-weight: 900;
     margin-bottom: 50px;
     text-align: center;
 }
-
+/* p Tags Within the First div Child of the Container With the ID rowOne or rowTwo */
 #rowOne div:first-child p, #rowTwo div:first-child p  {
     width: 80%;
     text-align: center;
     font-size: 1.5rem;
 }
-
+/* The Container With the ID oneByTwoContainer */
 #oneByTwoBoxContainer {
     width: 100%;
-    height: 700px;
+    height: 77vh;
     display: flex;
     flex-direction: row;
     margin: 0;
 }
-
+/* The First div Child of the Container With the ID oneByTwoContainer */
 #oneByTwoBoxContainer div:first-child {
     background-image: url(../images/10.jpg);
 }
-
+/* The Last div Child of the Container With the ID oneByTwoContainer */
+#oneByTwoBoxContainer div:last-child {
+    background-image: url(../images/7.jpg);
+}
+/* The First div Child of the Container With the ID oneByTwoContainer When Hovered Over */
 #oneByTwoBoxContainer div:first-child:hover {
     transform: scale(1.01);
 }
-
+/* The Last div Child of the Container With the ID oneByTwoContainer When Hovered Over */
 #oneByTwoBoxContainer div:last-child:hover {
     filter:hue-rotate(180deg);
     border: 2px #f4f4f4 solid;
 }
-
-#oneByTwoBoxContainer div:last-child {
-    background-image: url(../images/7.jpg);
-}
-
+/* The First and Last div Child of the Container With the ID oneByTwoContainer */
 #oneByTwoBoxContainer div:first-child, #oneByTwoBoxContainer div:last-child {
     display: flex;
     align-items: center;
@@ -248,7 +259,7 @@ h1 {
     margin: 0;
     transition: all 0.5s ease-in-out;
 }
-
+/* The Container With the Id rowTwo */
 #rowTwo {
     width: 100%;
     display: flex;
@@ -257,7 +268,7 @@ h1 {
     padding-top: 50px;
     margin-top: 0;
 }
-
+/* The Container With the Id rowThree */
 #rowThree {
     background-color: #072d67;
     background-image: url(../images/5.jpg);
@@ -265,16 +276,16 @@ h1 {
     height: 700px;
     clip-path: polygon(0 0, 50% 15%, 100% 0, 100% 100%, 0 100%);
 }
-
+/* h2 and p Tags in the Container With the ID rowThree. p Tags Within the First div Child of the Parent Container With the ID rowTwo. li Tags */
 #rowThree h2, #rowThree div p, #rowTwo div:first-child p, #rowTwo div:first-child h2, li  {
     color: #f4f4f4
 }
-
+/* div Containers With the Container With the ID rowThree */
 #rowThree div {
     width: 85%;
     flex-direction: row;
 }
-
+/* When Hovering Over the First p Child Inside of a div Container Which is Inside of the Container With the ID rowThree. */
 #rowThree div p:first-child:hover {
     border-radius: 100px;
     background: linear-gradient(45deg,#5e35b1 0%, #072d67 100%);
@@ -282,7 +293,7 @@ h1 {
     transform: rotate(30deg);
     cursor: pointer;
 }
-
+/* When Hovering Over the Last p Child Inside of a div Container Which is Inside of the Container With the ID rowThree. */
 #rowThree div p:last-child:hover {
     border-top: 5px #f4f4f4 solid;
     border-bottom: 5px #f4f4f4 solid;
@@ -292,7 +303,7 @@ h1 {
     animation: tiltBackAndForth 3s infinite ease-in-out;
     cursor: pointer;
 }
-
+/* p Tags Inside of a div Container Which is Inside of the Container With the ID rowThree */
 #rowThree div p {
     font-size: 1.5rem;
     border: 4px solid #f4f4f4;
@@ -301,20 +312,20 @@ h1 {
     padding: 3%;
     transition: all 0.75s ease-in-out;
 }
-
+/* The Container With the ID messageInput */
 #messageInput {
     height: 200px;
 }
-
+/* The Placeholder Attribute of the Container With the ID messageInput */
 #messageInput::placeholder {
     position: relative;
     bottom: 32%;
 }
-
+/* The Container With the ID mobileNav */
 #mobileNav {
     display: none;
 }
-
+/* Span Tags Within the Container With the ID mobileNav */
 #mobileNav span {
     width: 40px;
     height: 5px;
@@ -322,18 +333,23 @@ h1 {
     margin-top: 3px;
     margin-bottom: 3px;
 }
-
 /* ---- Classes ---- */
+/* Any Element With the Class callToActionText */
 .callToActionText {
     color: #f4f4f4;
     font-size: 4rem;
     font-weight: 900;
     border: 4px solid #f4f4f4;
-    padding: 25%;
+    padding: 30% 25%;
     margin: 0;
+}
+/* When any Element With the Class callToActionText is Hovered Over */
+.callToActionText:hover {
+    cursor: pointer;
 }
 
 /* ---- Media Queries ---- */
+/* When the Screen Size is 768px or Less, the Following Queries Within Take Effect */
 @media screen and (max-width: 768px) {
     form div {
         flex-direction: column;
@@ -351,30 +367,29 @@ h1 {
     #oneByTwoBoxContainer {
         display: flex;
         flex-direction: column;
-        height: 1400px;
+        height: 1000px;
     }
     #oneByTwoBoxContainer div:first-child, #oneByTwoBoxContainer div:last-child {
-        height: 30%;
+        height: 20%;
     }
     #rowThree div {
         flex-direction: column;
-        
     }
     #rowThree div p {
-        margin-bottom: 20px;
-        margin-top: 20px;
+        margin-bottom: 30px;
+        margin-top: 30px;
     }
     .callToActionText {
-        padding: 5% 10%;
+        padding: 20% 20%;
     }
 
 }
-
+/* When the Screen Size is 539px or Less, the Following Queries Within Take Effect */
 @media screen and (max-width: 593px) {
     h1 {
         font-size: 3.5rem;
     }
-    #rowOne div:first-child h2, #rowTwo div:first-child h2, .callToActionText, #rowThree h2 {
+    #rowOne div:first-child h2, #rowTwo div:first-child h2, #rowThree h2 {
         font-size: 2.8rem;
     }
     #rowOne div:first-child p, #rowTwo div:first-child p {
